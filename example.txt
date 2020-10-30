@@ -6,3 +6,12 @@ git checkout -- FileName ： 撤销对工作区的改动。
 1. 若文件只修改，未添加到暂存区，则直接撤销这次改动记录，回退至上次commit之后的版本状态。     
 2. 若文件修改后已add进暂存区（且文件没有再次修改），则分两步：先用 git reset <FileName> 撤销git add 操作（这样一来，修改仍停留在工作区），再执行git checkout -- FileName 清除工作区的修改。
 3. 若文件修改后，add进暂存区，且文件再次修改，则分三步：先用git checkout -- "FileName" 撤销第二次对工作区的改动，再用 git reset <FileName> 撤销git add 操作（此时为工作区第一次修改的状态），最后执行git checkout -- FileName 把第一次的修改也清除。
+
+分支管理：
+Master 指向最新的提交，head指向当前分支，可以是新创建的dev分支，也可以是master分支.
+创建分支：git branch <name>
+查看分支：git branch
+切换分支：git checkout <name>   OR  git switch <name>
+创建加切换分支：git checkout -b <name>  OR  git switch -c <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
